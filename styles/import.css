@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    $STYLE
+\*------------------------------------*/
+/**
+* Scss Libraries, mixins, functions and any Scss focused logic
+**/
+/*      FUNCTIONS       */
+/*------------------------------------*\
+	$MIXINS
+
+\*------------------------------------*/
+/*
+* Variables are in a map in variables.scss:
+* Use like this:
+.foo {
+  color: red;
+  @include respond-to('small') {
+	color: blue;
+  }
+}
+*/
+/*
+	Form input placeholder text
+	example:
+	input,
+	textarea {
+		@include input-placeholder {
+			color: $grey;
+		}
+	}
+*/
+/*------------------------------------*\
+    VARIABLES FILE
+\*------------------------------------*/
+/* BREAKPOINTS ARRAY */
+/**
+ * Used with mixin respond-to($breakpoint):
+.text {
+  color: pink;
+  @include respond-to(phone) {
+    color: maroon;
+  }
+}
+ *
+ */
+/* Z-INDEXING */
+/**
+ * Used with function z($layers):
+ .element {
+  z-index: z(goku);
+ }
+ *
+ */
+/* FONT SIZE */
+/*
+ * Las variables de tamaño las definimos en un MAP, puedes añadir, quitar o cambiarlas.
+ * Vienen dadas en REM. Esto creará una clase con el mismo nombre de la variable:
+  .x-small { font-size: .8rem}
+ * También podemos asignar tamaños con un función llamada fs:
+    .selector { font-size: fs(x-small);}
+ *
+ */
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/**
+ * Definimos elementos constantes del layout
+ */
+/*------------------------------------*\
+    $FONT-FACE
+\*------------------------------------*/
+/**
+ * Definimos las fuentes a utilizar:
+ * $basefont para todos los textos inline
+ * $altfont para textos alternativos, como citas, intro, etc...
+ * $codefont para código
+ */
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+/*------------------------------------*\
+		$RESET
+\*------------------------------------*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, main, menu, nav, section, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+*:focus {
+  outline: none; }
+
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic; }
+
+/**
+* Base & HTML elements
+**/
+/***************************\
+    ICONS FONT FACE
+    
+/***************************/
+/***************************\
+    FONT FAMILIES
+    
+/***************************/
+/***************************\
+    FORM STYLES
+    Estilos asociados a los tags html que se pueden incluir en un formulario.
+/***************************/
+input[type="hidden"] {
+  display: none; }
+
+/***************************\
+    BUTTONS STYLES
+    
+/***************************/
+/***************************\
+    LINK STYLES (HTML TAG)
+
+/***************************/
+a {
+  text-decoration: none; }
+  a:visited, a:hover, a:active, a:focus {
+    outline: 0;
+    text-decoration: none; }
+
+/*------------------------------------*\
+	$TYPOGRAPHY
+\*------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizelegibility; }
+
+h1 {
+  margin-bottom: 1em;
+  font-size: 2.2rem;
+  line-height: 1.1; }
+
+h2 {
+  margin-bottom: 1em;
+  font-size: 1.9rem;
+  line-height: 1.1; }
+
+h3 {
+  margin-bottom: 1em;
+  font-size: 1.6rem;
+  line-height: 1.1; }
+
+h4 {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  line-height: 1.1; }
+
+h5 {
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  line-height: 1.1; }
+
+h6 {
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+  line-height: 1.1; }
+
+/**
+* Layout and general styles
+**/
+/*------------------------------------*\
+	CORE STYLES
+\*------------------------------------*/
+/*--------------------------------
+	Box sizing
+*/
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+/*--------------------------------
+	Basic document styling
+*/
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: none; }
+
+body {
+  margin: 0; }
+
+/**
+* Componets used for layouts, headers, articles, etc...
+**/
+/*------------------------------------*\
+	$UTILITIES
+\*------------------------------------*/
+/*
+*
+* Abstractions used through the project
+*/
+.font-pico {
+  font-size: 0.75rem;
+  line-height: 1.5; }
+
+.font-nano {
+  font-size: 0.84375rem;
+  line-height: 1.5; }
+
+.font-micro {
+  font-size: 0.875rem;
+  line-height: 1.5; }
+
+.font-base {
+  font-size: 1rem;
+  line-height: 1.5; }
+
+.font-kilo {
+  font-size: 1.125rem;
+  line-height: 1.5; }
+
+.font-mega {
+  font-size: 1.1875rem;
+  line-height: 1.5; }
+
+.font-giga {
+  font-size: 1.375rem;
+  line-height: 1.5; }
+
+.font-tera {
+  font-size: 1.875rem;
+  line-height: 1.5; }
+
+.font-peta {
+  font-size: 3rem;
+  line-height: 1.5; }
+
+.color-secondary {
+  color: #000000; }
+
+.bg-color-secondary {
+  background-color: #000000; }
+
+.color-brand {
+  color: #000000; }
+
+.bg-color-brand {
+  background-color: #000000; }
+
+/**
+ * Clear floats.
+ */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/**
+ * Reset list styles
+ */
+/**
+ * Scrollbar styles
+ */
+/**
+ * Text alingment
+ */
+.align-right {
+  text-align: right; }
+
+.align-center {
+  text-align: center; }
+
+.hidden {
+  display: none; }
+
+/*# sourceMappingURL=import.css.map */

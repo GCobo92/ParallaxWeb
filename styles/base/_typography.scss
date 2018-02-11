@@ -29,7 +29,7 @@ h6 {
 			(h5,  1em, 1.2, 1.1)
 			(h6,  1em, .9, 1.1){
 
-  #{$header}, .#{$header} {
+  #{$header}{
 	margin-bottom : $margin-bot;
 	font-size: ($font-size) * 1rem;
 	line-height : $line-height;

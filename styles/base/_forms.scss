@@ -1,0 +1,21 @@
+/***************************\
+    FORM STYLES
+    Estilos asociados a los tags html que se pueden incluir en un formulario.
+/***************************/
+
+form {}
+
+input,
+select,
+textarea {
+    &:hover,
+    &:active,
+    &:focus {}
+    &:required {}
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+label {}
