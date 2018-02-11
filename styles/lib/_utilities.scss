@@ -1,0 +1,87 @@
+/*------------------------------------*\
+	$UTILITIES
+\*------------------------------------*/
+
+
+/*
+*
+* Abstractions used through the project
+*/
+
+@each $name,
+$value in $size-vars {
+    .font-#{$name} {
+        font-size: $value;
+        line-height: 1.5;
+    }
+}
+
+@each $color,
+$value in $brand-colors {
+    .color-#{$color} {
+        color: $value;
+    }
+    .bg-color-#{$color} {
+        background-color: $value;
+    }
+}
+
+
+/**
+ * Clear floats.
+ */
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.clearfix {
+    @extend %clearfix;
+}
+
+
+/**
+ * Reset list styles
+ */
+
+%reset-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+
+/**
+ * Scrollbar styles
+ */
+
+%scrollbar {
+    &::-webkit-scrollbar {
+        width: 5px; // background-color: $lightgrey;
+    }
+    &::-webkit-scrollbar-thumb {
+        // background-color: $grey;
+    }
+}
+
+
+/**
+ * Text alingment
+ */
+
+.align-right {
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}
+
+
+.hidden {
+    display: none;
+}

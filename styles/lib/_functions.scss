@@ -1,0 +1,104 @@
+/*------------------------------------*\
+    $FUNCIONES
+\*------------------------------------*/
+
+
+/*
+ * Function to control Indes
+
+ 	.selector { z-index: z(goku);}
+
+ * Compiles:
+
+	.selector { z-index: 9001;}
+
+ * The MAP used for this is in settings.scss
+ */
+
+@function z($layer) {
+    @return map-get($z-layers, $layer);
+}
+
+
+/*
+ * Function to keep consistency on font sizes
+ *
+ *	.selector { font-size: fs(x-small);}
+ *
+ * The MAP used for this is in settings.scss
+ */
+
+@function fs($font-size) {
+    @return map-get($size-vars, $font-size);
+}
+
+
+/*
+	use:
+		get the value of a particular breakpoint
+	example:
+		.box {
+			width: breakpoint('phone-wide');
+		}
+		would generate:
+		.box {
+			width: 480px;
+		}
+*/
+
+@function breakpoint($name) {
+    @return map_get($breakpoints, $name);
+}
+
+
+
+/*
+	REMs CALCULATOR
+*/
+$browser-default-font-size: 16px !default;
+$rems-on: true !default;
+$rems-base-font-size: $browser-default-font-size / 100% * $html-font-size !default;
+@function rem($size, $reverse: false) {
+    $html-font-size-units: if(str-index(#{$html-font-size}, 'px'), px, '%');
+    $unitless: strip-unit($size);
+    $unitless-base: strip-unit(if($html-font-size-units==px, $html-font-size, $rems-base-font-size));
+    @if $reverse==false {
+        @if $rems-on {
+            @if str-index(#{$size}, 'px') {
+                @return ($unitless / $unitless-base * 1rem);
+            }
+            @else if str-index(#{$size}, 'rem') {
+                @return $size;
+            }
+        }
+        @else {
+            @if str-index(#{$size}, 'px') {
+                @return $size;
+            }
+            @else if str-index(#{$size}, 'rem') {
+                @return $unitless * $unitless-base * 1px;
+            }
+        }
+    }
+    @else {
+        @return $unitless * $unitless-base * 1px;
+    }
+}
+
+
+/*
+	EMs calculator
+*/
+
+$media-query-units: em !default;
+@function em($size) {
+    $size: if(str-index(#{$size}, 'rem'), rem($size, true), $size);
+    $unitless: strip-unit($size);
+    $unitless-base: strip-unit($browser-default-font-size);
+    @if $media-query-units==em {
+        @return $unitless / $unitless-base * 1em;
+    }
+    @else {
+        @return $size;
+    }
+}

@@ -1,0 +1,117 @@
+/*------------------------------------*\
+    VARIABLES FILE
+\*------------------------------------*/
+
+
+/* BREAKPOINTS ARRAY */
+
+
+/**
+ * Used with mixin respond-to($breakpoint):
+.text {
+  color: pink;
+  @include respond-to(phone) {
+    color: maroon;
+  }
+}
+ *
+ */
+
+$breakpoints: ( 
+    'phone': em(375px), 
+    'phone-wide': em(480px),
+    'phablet': em(560px), 
+    'tablet-small': em(640px), 
+    'tablet': em(768px), 
+    'tablet-wide': em(1024px), 
+    'desktop': em(1152px), 
+    'desktop-wide': em(1360px));
+
+
+/* Z-INDEXING */
+
+
+/**
+ * Used with function z($layers):
+ .element {
+  z-index: z(goku);
+ }
+ *
+ */
+
+$z-layers: ( 
+    "modal-content": 9003, 
+    "modal-overlay": 9002, 
+    "goku": 9001, 
+    "above": 900, 
+    "default": 1, 
+    "below": -1, 
+    "bottomless-pit": -9000);
+
+/* FONT SIZE */
+/*
+ * Las variables de tamaño las definimos en un MAP, puedes añadir, quitar o cambiarlas.
+ * Vienen dadas en REM. Esto creará una clase con el mismo nombre de la variable:
+  .x-small { font-size: .8rem}
+ * También podemos asignar tamaños con un función llamada fs:
+    .selector { font-size: fs(x-small);}
+ *
+ */
+$size-vars: ( 
+    "pico": rem(12px), 
+    "nano": rem(13.5px), 
+    "micro": rem(14px), 
+    "base": rem(16px), 
+    "kilo": rem(18px), 
+    "mega": rem(19px), 
+    "giga": rem(22px), 
+    "tera": rem(30px), 
+    "peta": rem(48px));
+
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+/**
+ * Definimos elementos constantes del layout
+ */
+// $baselineheight :     1em;
+// $gutterwidth :        24px;
+// $pagemaxwidth :       860px;
+// $radius :             3px;
+// $hovertransition :    .3s;
+// $animationtime :      .8s;
+
+
+/*------------------------------------*\
+    $FONT-FACE
+\*------------------------------------*/
+
+/**
+ * Definimos las fuentes a utilizar:
+ * $basefont para todos los textos inline
+ * $altfont para textos alternativos, como citas, intro, etc...
+ * $codefont para código
+ */
+
+// $basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $altfont : Georgia, Times, "Times New Roman";
+// $codefont : "Courier New", monospace;
+// $baseheadingfont : $altfont;
+
+// $baseheadingfontweight : normal;
+// $baseheadingfontcolor : inherit;
+
+// $altlineheight : 1.35em;
+
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+
+$color-brand: #000000;
+$color-secondary: #000000;
+$brand-colors: ( 'secondary': $color-secondary, 'brand': $color-brand);

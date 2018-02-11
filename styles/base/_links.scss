@@ -1,0 +1,19 @@
+/***************************\
+    LINK STYLES (HTML TAG)
+
+/***************************/
+
+a {
+    //color: $color;
+    text-decoration: none;
+    &:hover {
+        //color: $color;
+    }
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 0;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,38 @@
+/*------------------------------------*\
+	$TYPOGRAPHY
+\*------------------------------------*/
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-family : $baseheadingfont;
+	// font-weight : $baseheadingfontweight;
+	// color : $baseheadingfontcolor;
+	text-rendering : optimizelegibility;
+}
+
+// Set headers line-height, margin bottom and font size
+//35px, 30px, 25px, 24px, 19px, 14px.
+@each   $header,
+		$margin-bot,
+		$font-size,
+		$line-height
+		in  (h1,  1em, 2.2, 1.1)
+			(h2,  1em, 1.9, 1.1)
+			(h3,  1em, 1.6, 1.1)
+			(h4,  1em, 1.5, 1.1)
+			(h5,  1em, 1.2, 1.1)
+			(h6,  1em, .9, 1.1){
+
+  #{$header}, .#{$header} {
+	margin-bottom : $margin-bot;
+	font-size: ($font-size) * 1rem;
+	line-height : $line-height;
+  }
+}
+
